@@ -8,11 +8,11 @@
       <el-form ref="loginFormRef" :model="form" label-width="0px" class="login_form" :rules="loginForm">
         <!-- 用户名 -->
         <el-form-item prop="username">
-          <el-input prefix-icon="iconfont icon-wode" v-model="form.username"></el-input>
+          <el-input prefix-icon="iconfont icon-users" v-model="form.username"></el-input>
         </el-form-item>
         <!-- 密码 -->
         <el-form-item prop="password">
-          <el-input prefix-icon="iconfont icon-mima" show-password v-model="form.password"></el-input>
+          <el-input prefix-icon="iconfont icon-3702mima" show-password v-model="form.password"></el-input>
         </el-form-item>
         <!-- 按钮区域 -->
         <el-form-item class="btns">
@@ -50,6 +50,7 @@ export default {
       this.$refs.loginFormRef.resetFields()
     },
     login() {
+      // 登录前的预验证
       this.$refs.loginFormRef.validate(async valid => {
         if (!valid) return
         const { data: res } = await getArticleAPI(this.form.username, this.form.password)
