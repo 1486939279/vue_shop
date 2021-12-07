@@ -182,7 +182,7 @@ export default {
         // 双向绑定文本框值
         item.inputValue = ''
       })
-      console.log(res.data)
+      // console.log(res.data)
       // 获取的数据只有一份,要判断是many动态数据给他存在data相应数据，only同理
       if (this.activeName === 'many') {
         this.manyTabData = res.data
