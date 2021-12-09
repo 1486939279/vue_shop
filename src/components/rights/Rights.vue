@@ -36,7 +36,7 @@ export default {
   methods: {
     async getRightsList() {
       const { data: res } = await getRightList()
-      console.log(res)
+      // console.log(res)
       if (res.meta.status !== 200) return this.$message.error('获取权限失败')
       this.rightList = res.data
     }
