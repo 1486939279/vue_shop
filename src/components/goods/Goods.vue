@@ -34,9 +34,13 @@
         <el-table-column label="操作" width="130px">
           <template slot-scope="scope">
             <!-- 编辑 -->
-            <el-button type="primary" icon="el-icon-edit" size="mini"></el-button>
+            <el-tooltip effect="dark" content="修改" placement="top" :enterable="false">
+              <el-button type="primary" icon="el-icon-edit" size="mini"></el-button>
+            </el-tooltip>
             <!-- 删除 -->
-            <el-button type="danger" icon="el-icon-delete" size="mini" @click="removeByGood(scope.row.goods_id)"></el-button>
+            <el-tooltip effect="dark" content="删除" placement="top" :enterable="false">
+              <el-button type="danger" icon="el-icon-delete" size="mini" @click="removeByGood(scope.row.goods_id)"></el-button>
+            </el-tooltip>
           </template>
         </el-table-column>
       </el-table>
