@@ -46,7 +46,7 @@
 </template>
 
 <script>
-import { getMenuList } from '@/API/menus.js'
+// import { getMenuList } from '@/API/menus.js'
 export default {
   name: 'Home',
   data() {
@@ -74,8 +74,8 @@ export default {
       this.$router.push('/login')
     },
     async menusList() {
-      const { data: res } = await getMenuList
-      if (res.meta.status !== 200) return this.$message.error(res.meta.msg)
+      const { data: res } = await this.$http.get('menus')
+      if (res.meta.status !== 200) return
       this.menulist = res.data
     },
     iscollapse() {

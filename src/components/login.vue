@@ -25,13 +25,13 @@
 </template>
 
 <script>
-import { getArticleAPI } from '@/API/Article.js'
+// import { getArticleAPI } from '@/API/Article.js'
 export default {
   data() {
     return {
       form: {
-        username: 'admin',
-        password: '123456'
+        username: '',
+        password: ''
       },
       loginForm: {
         username: [
@@ -53,7 +53,7 @@ export default {
       // 登录前的预验证
       this.$refs.loginFormRef.validate(async valid => {
         if (!valid) return
-        const { data: res } = await getArticleAPI(this.form.username, this.form.password)
+        const { data: res } = await this.$http.post('login', this.form)
         if (res.meta.status !== 200) return this.$message.error('登陆失败')
         this.$message.success('登录成功')
         // 登录成功后进行跳转

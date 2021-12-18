@@ -175,7 +175,7 @@ export default {
           item.attr_vals = item.attr_vals.length === 0 ? [] : item.attr_vals.split(' ')
         })
         this.manyTableData = res.data
-        console.log(this.manyTableData)
+        // console.log(this.manyTableData)
       } else if (this.activeIndex === '2') {
         const { data: res } = await this.$http.get('categories/' + this.cateId + '/attributes', {
           params: { sel: 'only' }
@@ -229,7 +229,7 @@ export default {
           this.addForm.attrs.push(newInfo)
         })
         form.attrs = this.addForm.attrs
-        console.log(form)
+        // console.log(form)
         // 发起请求添加商品
         const { data: res } = await this.$http.post('goods', form)
         if (res.meta.status !== 201) return this.$message.error('添加商品失败')
